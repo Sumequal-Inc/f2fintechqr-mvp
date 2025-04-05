@@ -1,7 +1,5 @@
 'use client';
 
-import AssignmentIcon from '@mui/icons-material/Assignment';
-
 interface LoanTemplateProps {
   title: string;
   pdf: string;
@@ -69,8 +67,8 @@ export default function LoanTemplate({ title, pdf, video }: LoanTemplateProps) {
         rel="noopener noreferrer"
         className="mt-8 px-8 py-3 text-lg font-semibold bg-gradient-to-r from-green-500 to-green-300 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 hover:scale-105 transition duration-300"
       >
-        <AssignmentIcon className="mr-2" />
-        Apply Now
+    
+        📄 Apply Now
       </a>
     </div>
   );
