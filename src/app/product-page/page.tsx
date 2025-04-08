@@ -42,39 +42,40 @@ export default function ProductPage() {
     const route = product.toLowerCase().replace(/\s+/g, '-');
     router.push(`/product-page/loan-details/${route}`);
   };
-  
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-blue-500 to-indigo-600 p-10">
-     
-      <h1 className="text-5xl font-extrabold text-center text-white mb-12 drop-shadow-md">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] p-10">
+      <h1 className="text-5xl font-extrabold text-center text-white mb-12 drop-shadow-lg">
         Choose Your Loan Type
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto">
         {products.map((product, index) => (
-          <div 
-            key={index} 
-            className="relative bg-white bg-opacity-90 backdrop-blur-lg shadow-2xl rounded-3xl p-6 transition duration-300 transform hover:scale-105 hover:shadow-xl"
+          <div
+            key={index}
+            className="relative bg-white/10 border border-white/20 backdrop-blur-md rounded-2xl overflow-hidden p-6 flex flex-col justify-between shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
           >
-            {/* Icon with Background */}
-            <div className="flex items-center gap-4 mb-4">
-              <div className="bg-gradient-to-r from-blue-600 to-blue-400 text-white p-3 rounded-full text-4xl shadow-lg">
-                {product.icon}
-              </div>
-              <h3 className="text-2xl font-semibold text-gray-900">{product.title}</h3>
+            {/* Icon */}
+            <div className="absolute top-4 left-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white p-4 rounded-full text-4xl shadow-md">
+              {product.icon}
             </div>
 
-          
-            <p className="text-gray-700 mb-4">{product.description}</p>
+            {/* Title */}
+            <h3 className="text-2xl font-semibold text-white mt-16">{product.title}</h3>
 
-           
-            <button 
+            {/* Description */}
+            <p className="text-white/80 text-sm mb-6">{product.description}</p>
+
+            {/* Read More Button */}
+            <button
               onClick={() => handleReadMore(product.title)}
-              className="px-6 py-2 text-sm font-semibold bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-lg shadow-lg hover:bg-blue-700 hover:scale-105 transition duration-300"
+              className="mt-auto px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-lg shadow-lg hover:bg-gradient-to-l hover:scale-105 transition-transform duration-300"
             >
               Read More →
             </button>
+
+            {/* Background Glowing Effect */}
+            <div className="absolute -bottom-16 -right-16 w-40 h-40 bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 opacity-30 blur-2xl rounded-full"></div>
           </div>
         ))}
       </div>
